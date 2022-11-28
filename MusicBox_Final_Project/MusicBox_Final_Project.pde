@@ -17,11 +17,12 @@ fill(58, 29, 0); //BROWN COLOR
 box(200, 100, 200);
 
 //LID BOX
-translate(10, -100, 0); 
+translate(8, -80, 0); //length, height, width (?)
+//translate(9, -100, 0); 
 rotateY(0.11);
 rotateX(0);
 fill(58, 29, 0); //BROWN COLOR
-box(160, 20, 200);
+box(200, 20, 200); // length , height , width (?)
 //translate(232, 200, 0); 
 //rotateY(-.11);
 //rotateX(-0.2);
