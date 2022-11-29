@@ -2,6 +2,10 @@
 int rotateVal = 0;
 int inc = 1;
 
+//SIZE VARIABLES
+int boxLength = 200;
+int boxWidth = 200;
+
 //DIRECTIONAL LIGHT
 float dirX;
 float dirY;
@@ -33,24 +37,21 @@ translate(305, 305, 0); //length, height, width
 rotateY(0.9);
 rotateX(0);
 fill(58, 29, 0); //BROWN COLOR
-box(200, 100, 200);
-
+box(boxLength, 100, boxWidth);
 
 //LID BOX
-float transRotateX = map(rotateVal, 0, 90, 0, 90);
-float transRotateY = map(rotateVal, 0, 90, 0, 90);
-translate(transRotateX, -60-transRotateY, 0); //length, height, width (?)
+float transRotateY = -boxWidth/2 * sin(radians(rotateVal));
+float transRotateX = -boxLength/2 * cos(radians(rotateVal)) + boxLength/2;
+
+translate(0, -60, 0);
+translate(transRotateX, transRotateY, 0); //length, height, width (?)
 rotateZ(radians(rotateVal));
 delay(10);
-rotateVal += inc;
-if(rotateVal > 90 || rotateVal <= 0){
+rotateVal+=inc;
+if(rotateVal>90 || rotateVal <=0){
   inc = -inc;
 }
 //rotateY(0.11);
 fill(58, 29, 0); //BROWN COLOR
-box(200, 20, 200); // length , height , width (?)
-
-//CODE SOURCE FROM: https://p5js.org/reference/#/p5/cylinder
- //cylinder(20, 75, 16, 16, 80, 80);
-//cylinder(100, 85, 24, 16);
+box(boxLength, 20, boxWidth); // length , height , width (?)
 }
