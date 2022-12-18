@@ -1,5 +1,5 @@
 //PIEZO
-const int piezo = 2; 
+const int piezo = 2;
 //DOOR SENSOR
 const int doorSensor = 4;
 //ROTARY ENCODER
@@ -40,94 +40,120 @@ bool checkSpinning(){
 //DOOR SENSOR
 bool checkOpen(){
   bool isOpen = false;
-  digitalWrite( 4, HIGH);
-  //int doorSensor = digitalWrite(true);
-  
+  isOpen = digitalRead(4);
   return isOpen;
+
+  
+/*  bool isOpen = false;
+ //digitalWrite( 4, HIGH);
+  digitalRead(4, LOW);
+  //int doorSensor = digitalWrite(true);
+
+     //return isOpen;
+
+
+  if (isOpen = true) {
+    digitalRead(4, HIGH);
+    }
+  else (isOpen = false) { 
+    digitalRead(4, LOW)
+    }
+
+     return isOpen;
+
+
+ /* //NEW CODE TEST
+  if (isOpen = true) {
+    playMusic();
+    } else {
+      isOpen = false;
+      }*/
+}
+
+void playMusic(){
+  tone(piezo, 27.50, 1000);
+  delay(500);
+ if(!checkOpen()) return;
+
+ tone(piezo, 25.96, 1000);
+ delay(500);
+ if(!checkOpen()) return;
+
+ tone(piezo, 27.50,1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 25.96, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 46.25, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 30.87, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 3951.07, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 4698.63, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 3951.07, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 4698.63, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 27.50, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 25.96, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 27.50, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 4698.63, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 25.96, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 27.50,1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 27.50,1000);
+ delay(500);
+  if(!checkOpen()) return;
+
+ tone(piezo, 25.96, 1000);
+ delay(500);
+  if(!checkOpen()) return;
+  
+  delay(200);
+
+  //}
+
+  //delay(50);
 }
 
 void loop() {
 //ROTARY ENCODER
 if (checkSpinning() == true && checkOpen() == true && millis() >1000) {
-
-  tone(piezo, 27.50, 1000); 
-  delay(500);
- if(!checkOpen()) break;
- 
- tone(piezo, 25.96, 1000);
- delay(500);
- if(!checkOpen()) break;
-   
- tone(piezo, 27.50,1000); 
- delay(500);
-  if(!checkOpen()) break;
-   
- tone(piezo, 25.96, 1000);
- delay(500);
-  if(!checkOpen()) break;
-    
- tone(piezo, 46.25, 1000);
- delay(500);
-  if(!checkOpen()) break;
-
- tone(piezo, 30.87, 1000);
- delay(500);
-  if(!checkOpen()) break;
+  playMusic();
+}
   
- tone(piezo, 3951.07, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  
- tone(piezo, 4698.63, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  
- tone(piezo, 3951.07, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  
- tone(piezo, 4698.63, 1000);
- delay(500); 
-  if(!checkOpen()) break;
-   
- tone(piezo, 27.50, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  
- tone(piezo, 25.96, 1000);
- delay(500);
-  if(!checkOpen()) break;
-
- tone(piezo, 27.50, 1000); 
- delay(500);
-  if(!checkOpen()) break;
-
- tone(piezo, 4698.63, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  
- tone(piezo, 25.96, 1000);
- delay(500);
-  if(!checkOpen()) break;
-
- tone(piezo, 27.50,1000); 
- delay(500);
-  if(!checkOpen()) break;
-   
- tone(piezo, 27.50,1000); 
- delay(500);
-  if(!checkOpen()) break;
-   
- tone(piezo, 25.96, 1000);
- delay(500);
-  if(!checkOpen()) break;
-  }
-  else{
-    noTone(piezo);
-  }
-  delay(200);
-  
-  //}
-  
-  //delay(50);
 }
