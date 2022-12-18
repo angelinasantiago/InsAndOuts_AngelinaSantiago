@@ -1,3 +1,7 @@
+import processing.serial.*;
+
+Serial myPort;
+
 //LID MOVEMENT
 int rotateVal = 0;
 int inc = 1;
@@ -15,11 +19,21 @@ background = loadImage("newtablebackground.jpg");
 //background(0);
 //size(500, 500);
 size(960, 540, P3D); //MAKES THE CANVAS 3D
+
+  /*String[] portList = Serial.list();
+  printArray(portList); // this line prints the port list to the console
+  String portName = Serial.list()[3]; //change the number in the [] for the port you need
+  myPort = new Serial(this, portName, 115200);*/
 }
 
 void draw() {
 //background(50);
 background(background);
+
+/*if ( myPort.available() > 0) { 
+    
+
+}*/
 
 //TABLE
 //fill(255);
@@ -56,7 +70,7 @@ delay(10);
 rotateVal += inc;
 if(rotateVal > 90 || rotateVal <= 0){
   inc = - inc;
-} 
+}
 
 //rotateY(0.11);
 fill(58, 29, 0); //BROWN COLOR
