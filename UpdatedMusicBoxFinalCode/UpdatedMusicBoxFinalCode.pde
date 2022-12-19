@@ -1,6 +1,7 @@
 import processing.serial.*;
 
 Serial myPort;
+int doorSensor = 0;
 
 //LID MOVEMENT
 int rotateVal = 0;
@@ -23,16 +24,16 @@ size(960, 540, P3D); //MAKES THE CANVAS 3D
   /*String[] portList = Serial.list();
   printArray(portList); // this line prints the port list to the console
   String portName = Serial.list()[3]; //change the number in the [] for the port you need
-  myPort = new Serial(this, portName, 115200);*/
+  myPort = new Serial(this, portName, 9600);*/
 }
 
 void draw() {
 //background(50);
 background(background);
 
+//reads DOOR SENSOR
 /*if ( myPort.available() > 0) { 
-    
-
+    doorSensor = myPort.read();
 }*/
 
 //TABLE
