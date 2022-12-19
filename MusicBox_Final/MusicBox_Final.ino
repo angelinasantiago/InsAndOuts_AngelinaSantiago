@@ -48,20 +48,14 @@ bool checkOpen(){
  //digitalWrite( 4, HIGH);
   digitalRead(4, LOW);
   //int doorSensor = digitalWrite(true);
-
      //return isOpen;
-
-
   if (isOpen = true) {
     digitalRead(4, HIGH);
     }
   else (isOpen = false) { 
     digitalRead(4, LOW)
     }
-
      return isOpen;
-
-
  /* //NEW CODE TEST
   if (isOpen = true) {
     playMusic();
